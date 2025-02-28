@@ -1,0 +1,5 @@
+frontend/node_modules
+frontend/.angular/cache
+frontend/.idea
+backend/__pycache__
+backend/routers/__pycache__

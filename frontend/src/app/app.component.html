@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <form id="fan-control" class="form b-3 m-3">
+        <h2 class="text-center mt-2">Fan Control</h2>
+        <div class="form-control b-3 m-3 justify-content-around">
+            <div class="d-flex align-content-between align-items-center justify-content-between">
+                <label for="fan-enabler" class="form-label m-3">Fan Enabled</label>
+                <mat-slide-toggle id="fan-enabler"  #toggleButton class="m-3 b-3 d-inline-flex" (change)="toggleFan()" >
+                </mat-slide-toggle>
+            </div>
+        </div>
+        <div class="form-control b-3 m-3 flex-row align-items-center">
+            <div class="d-flex align-content-between align-items-center">
+                <label for="speed-slider" class="fan-speed d-flex m-3">Fan Speed</label>
+                <mat-slider id="speed-slider" class="d-flex" min="0" max="255" step="1" discrete>
+                    <input matSliderThumb [(value)]="speed" (valueChange)="updateSpeed()" #speedSlider>
+                </mat-slider>
+            </div>
+        </div>
+        <div class="form-control b-3 m-3 ">
+            <div class="d-flex align-content-between align-items-center justify-content-between">
+                <p id="speed-label" class="form-label m-3 d-flex">Current Speed: {{ isOn ? speed : 0 }}</p>
+                <p id="speed-value" class="m-3 d-flex"> {{ speed }}</p>
+            </div>
+        </div>
+        <div class="form-control b-3 m-3 ">
+            <div class="d-flex align-content-between align-items-center justify-content-between">
+                <p id="update-label" class="m-3 d-flex">Update Fan</p>
+                <div class="d-inline-flex">
+                    <button id="get-speed-button" class="mx-1 my-3 d-flex btn btn-dark" (click)="getFan()">Get</button>
+                    <button id="set-speed-button" class="mx-1 my-3 d-flex btn btn-dark" (click)="setFan()">Set</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

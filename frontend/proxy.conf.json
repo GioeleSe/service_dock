@@ -1,0 +1,10 @@
+{
+  "/airpurifier": {
+    "target": "https://8a4227ae-0106-47e9-97e2-27d9234e3677.mock.pstmn.io",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/airpurifier": ""
+    }
+  }
+}

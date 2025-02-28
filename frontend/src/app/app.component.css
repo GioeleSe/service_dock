@@ -1,0 +1,34 @@
+:host {
+  --content-padding: 10px;
+}
+header {
+  display: block;
+  height: 60px;
+  padding: var(--content-padding);
+  box-shadow: 0 5px 25px var(--shadow-color);
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+mat-slider{
+  width: 50%;
+}
+label[for="speed-slider"] {
+  width: 40%;
+}
+#speed-label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+}
+form#fan-control{
+  width: 30%;
+}
