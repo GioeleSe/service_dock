@@ -6,15 +6,16 @@ import { catchError, map, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class FanControlService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
-  // private apiUrl = 'https://gioelese.ignorelist.com/api/airpurifier/fan';
+  private apiUrl = 'https://gioelese.ignorelist.com/api/airpurifier/fan';
 
   constructor(private http: HttpClient) { }
 
   getSpeed(): Observable<number> {
-    return this.http.get<{ id: number }>(this.apiUrl)
+    return this.http.get<{ speed: number }>(this.apiUrl)
         .pipe(map(res => {
-              return res.id
+            console.debug("res: ");
+            console.debug(res);
+              return res.speed
             }),
         );
   }
