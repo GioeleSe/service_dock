@@ -1,0 +1,14 @@
+<div id="temp-graph-container" class="d-flex p-1">
+<!--    <link href="https://www.apexcharts.com/angular-chart-demos/line-charts/basic/">-->
+    <div id="chart">
+        <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [xaxis]="chartOptions.xAxis"
+                [dataLabels]="chartOptions.dataLabels"
+                [grid]="chartOptions.grid"
+                [stroke]="chartOptions.stroke"
+                [title]="chartOptions.title"
+        ></apx-chart>
+    </div>
+</div>

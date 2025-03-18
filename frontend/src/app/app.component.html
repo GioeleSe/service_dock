@@ -1,35 +1,34 @@
-<div class="container mt-4">
-    <form id="fan-control" class="form b-3 m-3">
-        <h2 class="text-center mt-2">Fan Control</h2>
-        <div class="form-control b-3 m-3 justify-content-around">
-            <div class="d-flex align-content-between align-items-center justify-content-between">
-                <label for="fan-enabler" class="form-label m-3">Fan Enabled</label>
-                <mat-slide-toggle id="fan-enabler"  #toggleButton class="m-3 b-3 d-inline-flex" (change)="toggleFan()" >
-                </mat-slide-toggle>
-            </div>
-        </div>
-        <div class="form-control b-3 m-3 flex-row align-items-center">
-            <div class="d-flex align-content-between align-items-center">
-                <label for="speed-slider" class="fan-speed d-flex m-3">Fan Speed</label>
-                <mat-slider id="speed-slider" class="d-flex" min="0" max="255" step="1" discrete>
-                    <input matSliderThumb [(value)]="speed" (valueChange)="updateSpeed()" #speedSlider>
-                </mat-slider>
-            </div>
-        </div>
-        <div class="form-control b-3 m-3 ">
-            <div class="d-flex align-content-between align-items-center justify-content-between">
-                <p id="speed-label" class="form-label m-3 d-flex">Current Speed: {{ isOn ? speed : 0 }}</p>
-                <p id="speed-value" class="m-3 d-flex"> {{ speed }}</p>
-            </div>
-        </div>
-        <div class="form-control b-3 m-3 ">
-            <div class="d-flex align-content-between align-items-center justify-content-between">
-                <p id="update-label" class="m-3 d-flex">Update Fan</p>
-                <div class="d-inline-flex">
-                    <button id="get-speed-button" class="mx-1 my-3 d-flex btn btn-dark" (click)="getFan()">Get</button>
-                    <button id="set-speed-button" class="mx-1 my-3 d-flex btn btn-dark" (click)="setFan()">Set</button>
-                </div>
-            </div>
-        </div>
-    </form>
+<div class="w-100 h-100 d-flex flex-column">
+    <!-- Header -->
+    <mat-toolbar color="primary" class="header">
+        <span>Service Dock
+        <!--  TODO:-->
+        <!--   - IMPLEMENT THE TEMPERATURE MONITOR COMPONENT<br>-->
+        <!--   - APPLY THE ROUTING TO SERVICES, NOT SERVICE-FUNCTIONALITIES<br>-->
+        </span>
+        <span class="spacer"></span>
+        <mat-icon aria-hidden="false">verified_user</mat-icon>
+    </mat-toolbar>
+
+    <!-- Main Content -->
+    <mat-sidenav-container class="sidenav-container">
+        <!-- Sidebar -->
+        <mat-sidenav mode="side" opened class="sidenav">
+            <p class="sidenav-title">Services</p>
+            <mat-nav-list>
+                <a mat-list-item routerLink="/fan-control" routerLinkActive="active-link">Fan Control</a>
+                <a mat-list-item routerLink="/environmental-monitor" routerLinkActive="active-link">Environmental Monitor</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <!-- Main Content Area -->
+        <mat-sidenav-content class="content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- Footer -->
+    <mat-toolbar color="accent" class="footer">
+        Footer here ç.ç
+    </mat-toolbar>
 </div>

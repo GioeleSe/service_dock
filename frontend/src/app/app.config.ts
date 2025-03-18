@@ -7,6 +7,7 @@
  */
 
 import {ApplicationConfig} from '@angular/core';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 export const appConfig: ApplicationConfig = {
   providers: [],

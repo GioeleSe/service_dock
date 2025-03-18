@@ -1,0 +1,31 @@
+<div id="temp-monitor-container" class="d-flex p-1">
+    <div id="temp-monitor" class="form d-flex flex-column b-3 m-3 p-2 align-items-center justify-content-between">
+        <div id="temp-monitor-header" class="row d-inline-flex justify-content-center text-center">
+            <h2 class=" my-2 d-inline-flex col-8 m-0 b-0 align-self-center">Temperature Monitor</h2>
+            <button id="update-env-button" class="btn btn-primary col-2 mr-1 b-0 my-2 p-1 d-flex align-self-center" type="button" (click)="updateEnv()">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" [hidden]="!isUpdating"></span>
+                <span class="close" aria-hidden="true" [hidden]="!failedUpdate">
+                    Failed
+                </span>
+                <span class="sr-only" [hidden]="isUpdating||failedUpdate">Update</span>
+            </button>
+        </div>
+        <div class="form-control b-3 my-2">
+            <div class="d-flex align-content-between align-items-center justify-content-between">
+                <p id="temperature-label" class="form-label m-3 d-flex">Current Temperature: </p>
+                <p id="temperature-value" class="m-3 d-flex">
+                    {{_temp}}
+                </p>
+            </div>
+            <div class="d-flex align-content-between align-items-center justify-content-between">
+                <p id="humidity-label" class="form-label m-3 d-flex">Current Humidity: </p>
+                <p id="humidity-value" class="m-3 d-flex">
+                    {{_hum}}
+                </p>
+            </div>
+        </div>
+        <div class="form-control b-3 my-2 ">
+            <environmental-graph></environmental-graph>
+        </div>
+    </div>
+</div>

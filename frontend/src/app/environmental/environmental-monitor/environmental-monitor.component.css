@@ -1,0 +1,14 @@
+#temp-monitor{
+    border: 2px solid #bfbfbf;
+    border-radius: 2%;
+}
+#temp-label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+}
+.form#temp-monitor{
+    width: 30%;
+}
