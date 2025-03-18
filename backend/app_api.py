@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from database import sqlite_db
 app = FastAPI(
     title="Service Dock API",
     description="Simple API used to handle backend stuff",
@@ -22,7 +22,12 @@ app.add_middleware(
 from routers.airpurifier import ap_router
 app.include_router(ap_router, prefix="/api")
 
+@app.on_event("startup")
+def on_startup():
+    sqlite_db.create_db_and_tables()
+
 # Root endpoint
 @app.get("/")
 def root():
     return {"message": "See API documentation at /api/docs or /api/redoc"}
+
